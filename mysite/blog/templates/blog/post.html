@@ -1,0 +1,10 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}post {{post.title}}{% endblock  %}
+
+{% block content %}
+<h3> Blog {{post.title}} </h3>
+<h6> on {{post.date|date:"d-m-y"}} </h6>
+{{post.body|safe|linebreaks}}
+{% endblock  %}
+

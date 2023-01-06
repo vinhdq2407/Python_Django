@@ -10,4 +10,5 @@ def index(req):
     return render(req,'pages/home.html')
 def contact(req):
     return render(req, 'pages/contact.html')
-
+def post(req):
+    return render(req, 'pages/post.html')
