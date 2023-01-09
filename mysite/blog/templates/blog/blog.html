@@ -10,8 +10,17 @@
 
 <div class="row mt-3">
     <label class="col-md-3">{{post.id}}</label>
-    <label class="col-md-3"><a href="/blog/{{post.id}}">{{post.title}}</a></label>
-    <div class="col-md-6"><span>{{post.date|date:"d-m-y"}}</span></div>
+    <label class="col-md-3"><a href="{% url 'post' post.id %}">{{post.title}}</a></label>
+    <div class="col-md-2"><span>{{post.date|date:"d-m-y"}}</span></div>
+    
+    {% if post.image %}
+    <div class="col-md-3">
+        <img src="{{post.image.url}}" width="500px" height="300px"  />
+    </div>
+    {% else %}
+    <div class="col-md-3">
+    </div>
+    {% endif %}
 </div>
 
 {% endfor %}
